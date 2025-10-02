@@ -1,6 +1,6 @@
 # Declaración y asignación de variables
 
-print("=== Demo de Variables ===")
+print("Demo de Variables")
 
 # Variables básicas
 nombre = "Python"
@@ -9,7 +9,7 @@ es_interpretado = True
 
 print(f"Lenguaje: {nombre}")
 print(f"Versión: {version}")
-print(f"¿Es interpretado? {es_interpretado}")
+print(f"Es interpretado? {es_interpretado}")
 
 # Asignación múltiple
 x, y, z = 1, 2, 3
@@ -46,4 +46,4 @@ print(f"numero es un {type(numero).__name__}: {numero}")
 numero = [1, 2, 3]
 print(f"numero es una {type(numero).__name__}: {numero}")
 
-print("\n✅ Demo de variables completada")
+print("\nDemo de variables completada")

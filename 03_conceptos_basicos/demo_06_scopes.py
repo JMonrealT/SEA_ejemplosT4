@@ -1,6 +1,6 @@
 # Demostración de ámbitos (scopes) en Python
 
-print("=== Demo de Scopes (Ámbitos) ===")
+print("Demo de Scopes (Ámbitos)")
 
 # Variable global
 variable_global = "Soy global"
@@ -95,4 +95,4 @@ print(f"len global después de función: {len}")
 del len
 print(f"len built-in restaurado: {len([1,2,3])}")
 
-print("\n✅ Demo de scopes completada")
+print("\nDemo de scopes completada")

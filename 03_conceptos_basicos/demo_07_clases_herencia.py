@@ -1,6 +1,6 @@
 # Demostración de clases y herencia
 
-print("=== Demo de Clases y Herencia ===")
+print("Demo de Clases y Herencia")
 
 # Clase base
 class Vehiculo:
@@ -16,19 +16,19 @@ class Vehiculo:
     
     def encender(self):
         self.encendido = True
-        print(f"🔥 {self} se ha encendido")
+        print(f"{self} se ha encendido")
     
     def acelerar(self, incremento):
         if not self.encendido:
-            print(f"❌ {self} debe estar encendido para acelerar")
+            print(f"{self} debe estar encendido para acelerar")
             return
         
         self.velocidad += incremento
-        print(f"🚀 {self} acelera a {self.velocidad} km/h")
+        print(f"{self} acelera a {self.velocidad} km/h")
     
     def frenar(self):
         self.velocidad = 0
-        print(f"⛔ {self} se detiene")
+        print(f"{self} se detiene")
     
     def __str__(self):
         return f"{self.marca} {self.modelo}"
@@ -40,7 +40,7 @@ class Coche(Vehiculo):
         self.puertas = puertas
     
     def tocar_claxon(self):
-        print(f"📯 {self} toca el claxon: ¡BEEP BEEP!")
+        print(f"{self} toca el claxon: BEEP BEEP!")
     
     def info_completa(self):
         return f"{self} - {self.puertas} puertas"
@@ -55,9 +55,9 @@ class Motocicleta(Vehiculo):
     
     def hacer_caballito(self):
         if self.velocidad > 20:
-            print(f"🤸 {self} hace un caballito espectacular!")
+            print(f"{self} hace un caballito espectacular!")
         else:
-            print(f"⚠️  {self} necesita más velocidad para hacer caballito")
+            print(f"{self} necesita más velocidad para hacer caballito")
     
     def acelerar(self, incremento):
         # Sobrescribir método con comportamiento específico
@@ -66,7 +66,7 @@ class Motocicleta(Vehiculo):
             return
         
         self.velocidad += incremento * 1.5  # Las motos aceleran más rápido
-        print(f"🏍️  {self} acelera rápidamente a {self.velocidad} km/h")
+        print(f"{self} acelera rápidamente a {self.velocidad} km/h")
 
 # Clase con herencia múltiple (concepto avanzado)
 class Electrico:
@@ -75,7 +75,7 @@ class Electrico:
     
     def cargar_bateria(self):
         self.bateria = 100
-        print("🔋 Batería cargada al 100%")
+        print("Batería cargada al 100%")
 
 class CocheElectrico(Coche, Electrico):
     def __init__(self, marca, modelo, puertas, autonomia):
@@ -85,12 +85,12 @@ class CocheElectrico(Coche, Electrico):
     
     def acelerar(self, incremento):
         if self.bateria <= 0:
-            print(f"🪫 {self} no tiene batería")
+            print(f"{self} no tiene batería")
             return
         
         super().acelerar(incremento)
         self.bateria -= 2  # Gastar batería
-        print(f"🔋 Batería restante: {self.bateria}%")
+        print(f"Batería restante: {self.bateria}%")
 
 # Demo de uso
 print("1. Creando vehículos:")
@@ -98,9 +98,9 @@ mi_coche = Coche("Toyota", "Corolla", 4)
 mi_moto = Motocicleta("Honda", "CBR", 600)
 mi_tesla = CocheElectrico("Tesla", "Model 3", 4, 500)
 
-print(f"🚗 {mi_coche.info_completa()}")
-print(f"🏍️  {mi_moto} - {mi_moto.cilindrada}cc - {mi_moto.ruedas_por_defecto} ruedas")
-print(f"⚡ {mi_tesla.info_completa()} - {mi_tesla.autonomia}km autonomía")
+print(f"Coche: {mi_coche.info_completa()}")
+print(f"Moto: {mi_moto} - {mi_moto.cilindrada}cc - {mi_moto.ruedas_por_defecto} ruedas")
+print(f"Tesla: {mi_tesla.info_completa()} - {mi_tesla.autonomia}km autonomía")
 
 print("\n2. Probando métodos:")
 # Encender vehículos
@@ -136,4 +136,4 @@ print(f"¿mi_coche es instancia de Vehiculo? {isinstance(mi_coche, Vehiculo)}")
 print(f"¿mi_coche es instancia de Coche? {isinstance(mi_coche, Coche)}")
 print(f"¿mi_tesla es instancia de Electrico? {isinstance(mi_tesla, Electrico)}")
 
-print("\n✅ Demo de clases y herencia completada")
+print("\nDemo de clases y herencia completada")

@@ -1,6 +1,6 @@
 # Tipos de datos básicos en Python
 
-print("=== Demo de Tipos de Datos ===")
+print("Demo de Tipos de Datos")
 
 # Números
 entero = 42
@@ -57,4 +57,4 @@ print(f"String '{numero_str}' -> float: {numero_float}")
 print(f"Int {numero_int} -> bool: {bool(numero_int)}")
 print(f"Int 0 -> bool: {bool(0)}")
 
-print("\n✅ Demo de tipos de datos completada")
+print("\nDemo de tipos de datos completada")
