@@ -1,36 +1,31 @@
-from PyQt5.QtWidgets import QApplication, QMainWindow, QPushButton, QLabel, QVBoxLayout, QWidget
 import sys
+from PyQt5.QtWidgets import QApplication, QWidget, QGridLayout, QPushButton
 
-class Ventana(QMainWindow):
+class GridButtons(QWidget):
     def __init__(self):
         super().__init__()
-        self.contador = 0
-        self.setup_ui()
+        self.initUI()
 
-    def setup_ui(self):
-        self.setWindowTitle("Mi App")
-        self.setGeometry(100, 100, 400, 300)
+    def initUI(self):
+        grid = QGridLayout()
+        self.setLayout(grid)
+        
+        # Matriz de botones 10x5
+        for i in range(10):
+            for j in range(5):
+                button = QPushButton(f'Botón {i},{j}')
+                button.clicked.connect(self.buttonClicked)
+                grid.addWidget(button, i, j)
+        
+        self.setWindowTitle('Rejilla de Botones')
+        self.setGeometry(100, 100, 600, 400)
+        self.show()
 
-        widget = QWidget()
-        layout = QVBoxLayout()
+    def buttonClicked(self):
+        sender = self.sender()
+        print(f'Botón {sender.text()} ha sido pulsado')
 
-        self.label = QLabel("Contador: 0")
-        self.label.setStyleSheet("font-size: 16px;")
-        layout.addWidget(self.label)
-
-        boton = QPushButton("Click")
-        boton.clicked.connect(self.click)
-        layout.addWidget(boton)
-
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
-
-    def click(self):
-        self.contador += 1
-        self.label.setText(f"Contador: {self.contador}")
-
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ventana = Ventana()
-    ventana.show()
+    ex = GridButtons()
     sys.exit(app.exec_())
