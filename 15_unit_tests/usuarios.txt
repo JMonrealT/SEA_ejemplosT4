@@ -1,0 +1,3 @@
+admin:admin123
+usuario:user456
+invitado:guest789
